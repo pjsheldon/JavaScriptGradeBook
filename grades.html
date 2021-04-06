@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Week 3 Prgramming Lab "Grades.HTML"
+	Date - 9/20/20 
+	By: PJ Sheldon -->
+
+<head>
+	<title>Grade Book</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	<div class="grades">
+	<div class="form">
+		<form class="enter-grades">
+		<input type="text" id="firstName" placeholder="First Name"/>
+		<input type="text" id="average" placeholder="Course Average"/>
+		<button onclick="letter()">Convert</button>
+		</form>
+	</div>
+	</div>
+
+	<script>
+		function letter() {
+
+			var firstName = document.getElementById('firstName').value; //The variable of the name entered
+			var gradeAvg = document.getElementById('average').value;    // variable for the grade value entered
+
+			var letterGrade = " "; //variable of the letter
+
+			//for inputs that course average and the letter grade to be acheived 
+			if (gradeAvg < 60) {
+
+				letterGrade = 'An "F"';
+			}
+
+			else if (gradeAvg >= 60 && gradeAvg <= 69.5) {
+
+				letterGrade = 'A "D"';
+			}
+
+			else if (gradeAvg >= 69.6 && gradeAvg <= 79.5) {
+
+				letterGrade = 'A "C"';
+			}
+
+			else if (gradeAvg >= 79.6 && gradeAvg <= 89.5) {
+
+				letterGrade = 'A "B"';
+			}
+
+			else if (gradeAvg > 89.5) {
+
+				letterGrade = 'An "A"';
+			}
+
+			else {
+
+				letterGrade = "An invalid input!\nPlease try again."; // validation for ivalid input
+
+			}
+			// output alert box with what the letter grade and the name of the person.
+			window.alert(firstName + ",\nYour letter grade is: " + letterGrade); 
+
+
+		}
+	</script>
+
+</body>
+</html>
